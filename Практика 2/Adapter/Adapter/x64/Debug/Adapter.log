@@ -1,4 +1,0 @@
-﻿  Source.cpp
-C:\Users\Andrew\source\repos\Adapter\Adapter\Queue_adapter.h(27,1): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\Andrew\source\repos\Adapter\Adapter\Queue_adapter.h(40,1): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
-  Adapter.vcxproj -> C:\Users\Andrew\source\repos\Adapter\x64\Debug\Adapter.exe
