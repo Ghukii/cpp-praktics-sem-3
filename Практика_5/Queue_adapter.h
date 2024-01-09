@@ -2,6 +2,7 @@
 #include<iostream>
 #include<queue>
 #include<vector>
+#include<chrono>
 using namespace std;
 
 class Queue {
@@ -45,6 +46,16 @@ public:
 		cout<<nop<<endl;
 	}
 
+    int get_Noppp(){
+        return nop;
+    }
+
+    void clear(){
+        while(!q.empty()){
+            q.pop();
+        }
+    }
+
     void MergeSortImpl(vector<int>& values, vector<int>& buffer, int l, int r) {
         if (l < r) {
             int m = (l + r) / 2; nop++;
@@ -76,6 +87,7 @@ public:
     }
 
     void MergeSort() {
+        auto start = chrono::high_resolution_clock::now();
         vector <int> values; nop++;
 
         while(!q.empty()){
@@ -87,6 +99,12 @@ public:
             vector<int> buffer(values.size()); nop++;
             MergeSortImpl(values, buffer, 0, values.size() - 1); nop++;
         }
+
+        auto end = chrono::high_resolution_clock::now();
+
+        chrono::duration<float> duration = end - start;
+
+        cout << "N = " << size() << " " << "NOP = " << get_Noppp() << " " << "Time = " << duration.count() << endl;
     }
 
     void SetElement(int index, int data){
